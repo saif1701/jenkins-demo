@@ -9,6 +9,12 @@ pipeline {
             }
         }
 
+        stage('Lint') {
+            steps {
+                bat 'call npm run lint'
+            }
+        }
+
         stage('Build') {
             steps {
                 bat 'call npm run build'
