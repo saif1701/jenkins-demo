@@ -15,6 +15,12 @@ pipeline {
             }
         }
 
+        stage('Test') {
+            steps {
+                bat 'call npm test'
+            }
+        }
+
         stage('Build') {
             steps {
                 bat 'call npm run build'
@@ -25,6 +31,16 @@ pipeline {
             steps {
                 archiveArtifacts artifacts: 'dist/**', fingerprint: true
             }
+        }
+    }
+
+    post {
+        success {
+            echo '✅ Build Successful!'
+        }
+
+        failure {
+            echo '❌ Build Failed!'
         }
     }
 }
