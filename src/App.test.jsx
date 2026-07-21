@@ -5,3 +5,9 @@ describe("Basic Test", () => {
     expect(1 + 1).toBe(2);
   });
 });
+
+describe("compare", () => {
+  it("should pass", () => {
+    expect(1 === "1").toBe(false);
+  });
+});
