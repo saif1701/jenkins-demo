@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/saif1701/jenkins-demo.git'
-            }
-        }
 
         stage('Install') {
             steps {
